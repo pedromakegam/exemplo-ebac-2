@@ -2,11 +2,26 @@ package br.com.pedro.ebac;
 
 /** Operações aritméticas com double. Valores seguem a precisão de ponto flutuante do Java. */
 public final class Calculadora {
-    /** Soma dois valores. @param a primeira parcela @param b segunda parcela @return soma */
+    /**
+     * Soma dois valores.
+     * @param a primeira parcela
+     * @param b segunda parcela
+     * @return soma
+     */
     public double adicionar(double a, double b) { return a + b; }
-    /** Subtrai b de a. @param a minuendo @param b subtraendo @return diferença */
+    /**
+     * Subtrai b de a.
+     * @param a minuendo
+     * @param b subtraendo
+     * @return diferença
+     */
     public double subtrair(double a, double b) { return a - b; }
-    /** Multiplica dois valores. @param a primeiro fator @param b segundo fator @return produto */
+    /**
+     * Multiplica dois valores.
+     * @param a primeiro fator
+     * @param b segundo fator
+     * @return produto
+     */
     public double multiplicar(double a, double b) { return a * b; }
     /**
      * Divide o dividendo pelo divisor.

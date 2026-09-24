@@ -1,8 +1,8 @@
 # Verificação das entregas
 
-Execuções em 24/09/2026 com JDK 17 e Maven 3.9.16.
+Execuções em 24/09/2026 com JDK 17, Maven 3.9.16 e PostgreSQL 16.11 local.
 
-Primeiro lote: `mvn test`. Segundo lote: `mvn -pl mod14,mod24,mod25 -am test`. Ambos terminaram com BUILD SUCCESS.
+Os módulos foram compilados e testados em lotes pelo Maven. Os testes JDBC/JPA usaram um banco de exercícios real, com schemas isolados. A geração de JavaDoc da calculadora terminou sem avisos.
 
 | Módulo | Testes | Falhas | Erros | Ignorados |
 |---|---:|---:|---:|---:|
@@ -20,7 +20,14 @@ Primeiro lote: `mvn test`. Segundo lote: `mvn -pl mod14,mod24,mod25 -am test`. A
 | mod23 | 4 | 0 | 0 | 0 |
 | mod24 | 10 | 0 | 0 | 0 |
 | mod25 | 32 | 0 | 0 | 0 |
+| mod29 | 5 | 0 | 0 | 0 |
+| mod30 | 8 | 0 | 0 | 0 |
+| mod32 | 2 | 0 | 0 | 0 |
+| mod33 | 1 | 0 | 0 | 0 |
+| mod35 | 3 | 0 | 0 | 0 |
+| mod36 | 6 | 0 | 0 | 0 |
+| mod37 | 2 | 0 | 0 | 0 |
 
-Total: 85 testes. A classe main do módulo 5 também foi executada e imprimiu Hello Pedro!.
+Total: 112 testes. A classe main do módulo 5 também foi executada e imprimiu Hello Pedro!.
 
-No módulo 24, a primeira execução, antes de implementar os métodos, falhou nos dez testes. Depois da implementação, os dez testes passaram.
+No módulo 24, os dez testes falharam antes da implementação e passaram depois. Os scripts SQL dos módulos 27 e 28 foram executados com ON_ERROR_STOP e suas saídas foram preservadas em execucao.txt.

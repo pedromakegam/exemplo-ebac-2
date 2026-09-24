@@ -29,3 +29,7 @@ Para testar um módulo: `mvn -pl mod22 -am test`. Os resultados da execução es
 - [mod6](./mod6)
 
 Os dados usados nos exemplos e testes são fictícios.
+
+## Testes com PostgreSQL
+
+Os módulos 29, 30, 32, 33, 35 e 36 precisam de EBAC_DB_URL, EBAC_DB_USER e EBAC_DB_PASSWORD. Configure as variáveis para um banco de exercícios antes de rodar Maven. Sem EBAC_DB_URL, os testes de integração ficam desabilitados. Todos esses testes foram executados com PostgreSQL real na validação registrada.
