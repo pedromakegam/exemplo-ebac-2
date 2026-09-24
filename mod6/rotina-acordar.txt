@@ -1,0 +1,28 @@
+ALGORITMO: ROTINA DE ACORDAR
+
+INÍCIO
+1. Aguardar o despertador tocar no horário definido.
+2. Ao ouvir o alarme, abrir os olhos.
+3. Localizar o despertador e desligar o alarme.
+4. Sentar na cama e apoiar os pés no chão.
+5. Se estiver tonto, permanecer sentado até se sentir bem.
+6. Levantar e caminhar até o banheiro.
+7. Abrir a torneira, molhar o rosto e fechar a torneira.
+8. Secar o rosto com uma toalha.
+9. Pegar a escova de dentes e colocar pasta nela.
+10. Escovar os dentes, enxaguar a boca e lavar a escova.
+11. Fechar a torneira e guardar a escova.
+12. Voltar ao quarto e escolher roupas adequadas ao dia.
+13. Vestir as roupas e guardar a roupa de dormir.
+14. Ir até a cozinha.
+15. Se houver alimento disponível, preparar o café da manhã.
+    Caso contrário, separar o necessário para comer fora.
+16. Se o café da manhã foi preparado, comer e lavar os utensílios usados.
+17. Conferir a lista de compromissos do dia.
+18. Para cada item necessário (chaves, telefone e material de trabalho):
+    18.1 Verificar se está na bolsa ou no bolso.
+    18.2 Se não estiver, procurá-lo e guardá-lo.
+19. Conferir se as torneiras estão fechadas e o fogão está desligado.
+20. Se for preciso sair, calçar os sapatos, sair e trancar a porta.
+    Caso contrário, ir ao local da primeira atividade em casa.
+FIM
