@@ -1,0 +1,30 @@
+<!doctype html><html lang="pt-BR"><meta charset="UTF-8"><title>Criação, alteração e exclusão da tabela Produto</title><style>body{font:17px system-ui;margin:32px;color:#273747;max-width:1200px}small{color:#647587}h1{font-size:27px}pre{font:15px/1.45 ui-monospace,monospace;white-space:pre-wrap;background:#f1f4f8;border:1px solid #d6dfeb;padding:20px}footer{font-size:13px;color:#647587}</style><small>EBAC · POSTGRESQL 16 · EXECUÇÃO LOCAL</small><h1>Criação, alteração e exclusão da tabela Produto</h1><p>Saída real do psql no banco isolado ebac_evidencias. Dados fictícios.</p><pre>BEGIN;
+BEGIN
+CREATE SCHEMA evidencia_ddl;
+CREATE SCHEMA
+SET search_path TO evidencia_ddl;
+SET
+CREATE TABLE &quot;Produto&quot;(&quot;Id&quot; bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,&quot;Nome&quot; varchar(100) NOT NULL,&quot;Preco&quot; numeric(12,2) NOT NULL);
+CREATE TABLE
+ALTER TABLE &quot;Produto&quot; ADD COLUMN &quot;Ativo&quot; boolean NOT NULL DEFAULT true;
+ALTER TABLE
+SELECT column_name,data_type FROM information_schema.columns WHERE table_schema=&#x27;evidencia_ddl&#x27; AND table_name=&#x27;Produto&#x27; ORDER BY ordinal_position;
+ column_name |     data_type     
+-------------+-------------------
+ Id          | bigint
+ Nome        | character varying
+ Preco       | numeric
+ Ativo       | boolean
+(4 rows)
+
+DROP TABLE &quot;Produto&quot;;
+DROP TABLE
+SELECT to_regclass(&#x27;evidencia_ddl.&quot;Produto&quot;&#x27;) IS NULL AS &quot;TabelaExcluida&quot;;
+ TabelaExcluida 
+----------------
+ t
+(1 row)
+
+ROLLBACK;
+ROLLBACK
+</pre><footer>Comandos executados com ON_ERROR_STOP=1. Esta página apenas apresenta a saída capturada do terminal.</footer></html>

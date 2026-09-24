@@ -1,0 +1,30 @@
+BEGIN;
+BEGIN
+SET search_path TO mod27;
+SET
+INSERT INTO "Produto"("Codigo","Nome","Preco") VALUES ('EVID','Produto de exemplo',10.00);
+INSERT 0 1
+SELECT "Codigo","Nome","Preco" FROM "Produto" WHERE "Codigo"='EVID';
+ Codigo |        Nome        | Preco
+--------+--------------------+-------
+ EVID   | Produto de exemplo | 10.00
+(1 row)
+
+UPDATE "Produto" SET "Preco"=12.50 WHERE "Codigo"='EVID';
+UPDATE 1
+SELECT "Codigo","Nome","Preco" FROM "Produto" WHERE "Codigo"='EVID';
+ Codigo |        Nome        | Preco
+--------+--------------------+-------
+ EVID   | Produto de exemplo | 12.50
+(1 row)
+
+DELETE FROM "Produto" WHERE "Codigo"='EVID';
+DELETE 1
+SELECT count(*) AS "RegistrosRestantes" FROM "Produto" WHERE "Codigo"='EVID';
+ RegistrosRestantes
+--------------------
+                  0
+(1 row)
+
+ROLLBACK;
+ROLLBACK

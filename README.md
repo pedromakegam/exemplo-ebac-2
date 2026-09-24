@@ -33,3 +33,8 @@ Os dados usados nos exemplos e testes são fictícios.
 ## Testes com PostgreSQL
 
 Os módulos 29, 30, 32, 33, 35 e 36 precisam de EBAC_DB_URL, EBAC_DB_USER e EBAC_DB_PASSWORD. Configure as variáveis para um banco de exercícios antes de rodar Maven. Sem EBAC_DB_URL, os testes de integração ficam desabilitados. Todos esses testes foram executados com PostgreSQL real na validação registrada.
+
+
+## Entregas finais
+
+JSF e implantação: mod38 e mod39. Spring Boot e APIs independentes: mod40 e mod42. Abrigo: java-pro/mod11. Desenho do encurtador: java-pro/mod16. Memelândia com três serviços: java-pro/mod17. Resultados de execução: VERIFICACAO.md.

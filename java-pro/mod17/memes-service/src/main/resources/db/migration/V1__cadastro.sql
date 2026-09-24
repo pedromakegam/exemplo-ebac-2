@@ -1,0 +1,1 @@
+CREATE TABLE memes(id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,nome VARCHAR(100) NOT NULL,descricao VARCHAR(500) NOT NULL,url VARCHAR(2048) NOT NULL,usuario_id BIGINT NOT NULL CHECK(usuario_id>0),categoria_id BIGINT NOT NULL CHECK(categoria_id>0),data_cadastro DATE NOT NULL);CREATE INDEX idx_memes_categoria ON memes(categoria_id);

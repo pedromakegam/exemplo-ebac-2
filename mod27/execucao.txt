@@ -18,7 +18,7 @@ INSERT INTO "Produto" ("Codigo", "Nome", "Descricao", "Preco") VALUES
     ('TEMP', 'Produto temporário', 'Registro para testar DELETE', 1.00);
 INSERT 0 3
 SELECT "Codigo", "Nome", "Preco", "Ativo" FROM "Produto" ORDER BY "Codigo";
- Codigo |        Nome        | Preco | Ativo 
+ Codigo |        Nome        | Preco | Ativo
 --------+--------------------+-------+-------
  P001   | Caderno            | 15.90 | t
  P002   | Caneta             |  3.50 | t
@@ -30,19 +30,29 @@ UPDATE 1
 DELETE FROM "Produto" WHERE "Codigo" = 'TEMP';
 DELETE 1
 SELECT "Codigo", "Nome", "Preco", "Ativo" FROM "Produto" ORDER BY "Codigo";
- Codigo |  Nome   | Preco | Ativo 
+ Codigo |  Nome   | Preco | Ativo
 --------+---------+-------+-------
  P001   | Caderno | 16.90 | t
  P002   | Caneta  |  3.50 | t
 (2 rows)
 
-CREATE TABLE "ProdutoRascunho" ("Id" integer PRIMARY KEY);
-CREATE TABLE
-DROP TABLE "ProdutoRascunho";
+-- Demonstra DROP sobre Produto em uma transação isolada.
+-- ROLLBACK restaura a tabela de exercício depois da verificação.
+BEGIN;
+BEGIN
+DROP TABLE "Produto";
 DROP TABLE
+SELECT to_regclass('mod27."Produto"') IS NULL AS "TabelaExcluida";
+ TabelaExcluida
+----------------
+ t
+(1 row)
+
+ROLLBACK;
+ROLLBACK
 SELECT table_name FROM information_schema.tables
 WHERE table_schema = 'mod27' ORDER BY table_name;
- table_name 
+ table_name
 ------------
  Produto
 (1 row)

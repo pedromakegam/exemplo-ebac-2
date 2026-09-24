@@ -1,0 +1,23 @@
+<!doctype html><html lang="pt-BR"><meta charset="UTF-8"><title>Relacionamentos e totais das vendas</title><style>body{font:17px system-ui;margin:32px;color:#273747;max-width:1200px}small{color:#647587}h1{font-size:27px}pre{font:15px/1.45 ui-monospace,monospace;white-space:pre-wrap;background:#f1f4f8;border:1px solid #d6dfeb;padding:20px}footer{font-size:13px;color:#647587}</style><small>EBAC · POSTGRESQL 16 · EXECUÇÃO LOCAL</small><h1>Relacionamentos e totais das vendas</h1><p>Saída real do psql no banco isolado ebac_evidencias. Dados fictícios.</p><pre>SET search_path TO mod28;
+SET
+SELECT v.&quot;Id&quot; AS &quot;Venda&quot;,c.&quot;Nome&quot; AS &quot;Cliente&quot;,p.&quot;Nome&quot; AS &quot;Produto&quot;,i.&quot;Quantidade&quot;,i.&quot;PrecoUnitario&quot;,i.&quot;Quantidade&quot;*i.&quot;PrecoUnitario&quot; AS &quot;Subtotal&quot;
+FROM &quot;Venda&quot; v JOIN &quot;Cliente&quot; c ON c.&quot;Id&quot;=v.&quot;ClienteId&quot;
+JOIN &quot;ItemVenda&quot; i ON i.&quot;VendaId&quot;=v.&quot;Id&quot;
+JOIN &quot;Produto&quot; p ON p.&quot;Id&quot;=i.&quot;ProdutoId&quot; ORDER BY v.&quot;Id&quot;,p.&quot;Id&quot;;
+ Venda |    Cliente    | Produto | Quantidade | PrecoUnitario | Subtotal 
+-------+---------------+---------+------------+---------------+----------
+     1 | Ana Exemplo   | Caderno |          2 |         16.90 |    33.80
+     1 | Ana Exemplo   | Caneta  |          3 |          3.50 |    10.50
+     2 | Bruno Exemplo | Caneta  |          2 |          3.50 |     7.00
+(3 rows)
+
+SELECT v.&quot;Id&quot; AS &quot;Venda&quot;,c.&quot;Nome&quot; AS &quot;Cliente&quot;,SUM(i.&quot;Quantidade&quot;*i.&quot;PrecoUnitario&quot;) AS &quot;Total&quot;
+FROM &quot;Venda&quot; v JOIN &quot;Cliente&quot; c ON c.&quot;Id&quot;=v.&quot;ClienteId&quot; JOIN &quot;ItemVenda&quot; i ON i.&quot;VendaId&quot;=v.&quot;Id&quot;
+GROUP BY v.&quot;Id&quot;,c.&quot;Nome&quot; ORDER BY v.&quot;Id&quot;;
+ Venda |    Cliente    | Total 
+-------+---------------+-------
+     1 | Ana Exemplo   | 44.30
+     2 | Bruno Exemplo |  7.00
+(2 rows)
+
+</pre><footer>Comandos executados com ON_ERROR_STOP=1. Esta página apenas apresenta a saída capturada do terminal.</footer></html>

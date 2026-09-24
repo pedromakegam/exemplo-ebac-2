@@ -1,7 +1,7 @@
-# Clientes, produtos e vendas
+# Cadastro de vendas em PostgreSQL
 
-Execute `psql -v ON_ERROR_STOP=1 -a -f mod28/vendas.sql` em um banco de exercícios sem o schema mod28. São usados dados fictícios.
+Registros fictícios nas quatro tabelas. ItemVenda resolve a relação entre vendas e produtos e preserva o preço aplicado em cada venda.
 
-Cliente tem várias vendas; Venda tem vários itens; Produto pode aparecer em vários itens. ItemVenda resolve o relacionamento entre Venda e Produto e guarda quantidade e preço no momento da compra. Assim, mudar o preço atual do produto não muda o histórico das vendas.
+As consultas associam cliente, venda, itens e produto. Os totais calculados são R$ 44,30 e R$ 7,00.
 
-Chaves estrangeiras impedem referências inexistentes. UNIQUE protege CPF e código; CHECK valida preço e quantidade. O script inclui consultas com JOIN, agregação e LEFT JOIN, além de verificar rejeições de quantidade inválida e cliente inexistente. O total é calculado a partir dos itens.
+As capturas estão em respostas.pdf. Os arquivos SQL e execucao.txt permitem conferir os comandos e a saída real do psql. As páginas HTML apenas apresentam essa saída para as capturas; não simulam um gerenciador de banco.

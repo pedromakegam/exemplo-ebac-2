@@ -1,0 +1,3 @@
+mod40: health UP; GET /saudacao?nome=Pedro = Olá, Pedro!
+mod42/cliente-service: health UP; POST 201; GET 200; PUT 200; DELETE 204.
+mod42/produto-service: health UP; POST 201; GET 200; PUT 200; DELETE 204.

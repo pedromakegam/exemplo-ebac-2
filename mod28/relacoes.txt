@@ -1,0 +1,22 @@
+SET search_path TO mod28;
+SET
+SELECT v."Id" AS "Venda",c."Nome" AS "Cliente",p."Nome" AS "Produto",i."Quantidade",i."PrecoUnitario",i."Quantidade"*i."PrecoUnitario" AS "Subtotal"
+FROM "Venda" v JOIN "Cliente" c ON c."Id"=v."ClienteId"
+JOIN "ItemVenda" i ON i."VendaId"=v."Id"
+JOIN "Produto" p ON p."Id"=i."ProdutoId" ORDER BY v."Id",p."Id";
+ Venda |    Cliente    | Produto | Quantidade | PrecoUnitario | Subtotal
+-------+---------------+---------+------------+---------------+----------
+     1 | Ana Exemplo   | Caderno |          2 |         16.90 |    33.80
+     1 | Ana Exemplo   | Caneta  |          3 |          3.50 |    10.50
+     2 | Bruno Exemplo | Caneta  |          2 |          3.50 |     7.00
+(3 rows)
+
+SELECT v."Id" AS "Venda",c."Nome" AS "Cliente",SUM(i."Quantidade"*i."PrecoUnitario") AS "Total"
+FROM "Venda" v JOIN "Cliente" c ON c."Id"=v."ClienteId" JOIN "ItemVenda" i ON i."VendaId"=v."Id"
+GROUP BY v."Id",c."Nome" ORDER BY v."Id";
+ Venda |    Cliente    | Total
+-------+---------------+-------
+     1 | Ana Exemplo   | 44.30
+     2 | Bruno Exemplo |  7.00
+(2 rows)
+

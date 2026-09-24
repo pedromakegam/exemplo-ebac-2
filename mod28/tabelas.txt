@@ -1,0 +1,32 @@
+SET search_path TO mod28;
+SET
+SELECT * FROM "Cliente" ORDER BY "Id";
+ Id |     Cpf     |     Nome      |         Email
+----+-------------+---------------+-----------------------
+  1 | 00000000001 | Ana Exemplo   | ana@example.invalid
+  2 | 00000000002 | Bruno Exemplo | bruno@example.invalid
+(2 rows)
+
+SELECT * FROM "Produto" ORDER BY "Id";
+ Id | Codigo |   Nome   | Preco
+----+--------+----------+-------
+  1 | P001   | Caderno  | 16.90
+  2 | P002   | Caneta   |  3.50
+  3 | P003   | Borracha |  2.00
+(3 rows)
+
+SELECT "Id","ClienteId","Status" FROM "Venda" ORDER BY "Id";
+ Id | ClienteId |  Status
+----+-----------+-----------
+  1 |         1 | CONCLUIDA
+  2 |         2 | CONCLUIDA
+(2 rows)
+
+SELECT * FROM "ItemVenda" ORDER BY "VendaId","ProdutoId";
+ VendaId | ProdutoId | Quantidade | PrecoUnitario
+---------+-----------+------------+---------------
+       1 |         1 |          2 |         16.90
+       1 |         2 |          3 |          3.50
+       2 |         2 |          2 |          3.50
+(3 rows)
+

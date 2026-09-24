@@ -1,0 +1,29 @@
+BEGIN;
+BEGIN
+CREATE SCHEMA evidencia_ddl;
+CREATE SCHEMA
+SET search_path TO evidencia_ddl;
+SET
+CREATE TABLE "Produto"("Id" bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,"Nome" varchar(100) NOT NULL,"Preco" numeric(12,2) NOT NULL);
+CREATE TABLE
+ALTER TABLE "Produto" ADD COLUMN "Ativo" boolean NOT NULL DEFAULT true;
+ALTER TABLE
+SELECT column_name,data_type FROM information_schema.columns WHERE table_schema='evidencia_ddl' AND table_name='Produto' ORDER BY ordinal_position;
+ column_name |     data_type
+-------------+-------------------
+ Id          | bigint
+ Nome        | character varying
+ Preco       | numeric
+ Ativo       | boolean
+(4 rows)
+
+DROP TABLE "Produto";
+DROP TABLE
+SELECT to_regclass('evidencia_ddl."Produto"') IS NULL AS "TabelaExcluida";
+ TabelaExcluida
+----------------
+ t
+(1 row)
+
+ROLLBACK;
+ROLLBACK

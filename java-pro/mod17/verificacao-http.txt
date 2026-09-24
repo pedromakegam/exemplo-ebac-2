@@ -1,0 +1,5 @@
+Fluxo real: usuário 201 -> categoria 201 -> meme 201 -> aleatório 200.
+Usuário e categoria inexistentes: 422, sem gravar memes adicionais.
+Métricas HTTP disponíveis nos três processos.
+Usuários parado: criação retorna 503 e preserva o único meme válido.
+Logs de acesso presentes, sem o e-mail do exemplo.

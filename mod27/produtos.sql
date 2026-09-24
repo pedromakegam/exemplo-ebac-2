@@ -23,8 +23,12 @@ DELETE FROM "Produto" WHERE "Codigo" = 'TEMP';
 
 SELECT "Codigo", "Nome", "Preco", "Ativo" FROM "Produto" ORDER BY "Codigo";
 
-CREATE TABLE "ProdutoRascunho" ("Id" integer PRIMARY KEY);
-DROP TABLE "ProdutoRascunho";
+-- Demonstra DROP sobre Produto em uma transação isolada.
+-- ROLLBACK restaura a tabela de exercício depois da verificação.
+BEGIN;
+DROP TABLE "Produto";
+SELECT to_regclass('mod27."Produto"') IS NULL AS "TabelaExcluida";
+ROLLBACK;
 
 SELECT table_name FROM information_schema.tables
 WHERE table_schema = 'mod27' ORDER BY table_name;

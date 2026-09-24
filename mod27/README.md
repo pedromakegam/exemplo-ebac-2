@@ -1,9 +1,7 @@
-# DDL e DML de Produto
+# DDL e DML em PostgreSQL
 
-Execute em um banco de exercícios vazio, com PostgreSQL 16 ou superior:
+CREATE e ALTER modificaram a estrutura; DROP removeu Produto. A consulta confirmou a ausência da tabela. ROLLBACK restaurou o ambiente de demonstração.
 
-```sh
-psql -v ON_ERROR_STOP=1 -a -f mod27/produtos.sql
-```
+INSERT adicionou o produto, UPDATE alterou o preço e DELETE removeu o registro. As consultas mostram o estado após cada operação.
 
-O script cria o schema mod27, cria e altera a tabela Produto, insere registros, atualiza o preço, exclui um registro de teste e consulta o resultado. ProdutoRascunho demonstra DROP TABLE sem apagar a tabela principal. Todos os dados são fictícios. As tabelas são criadas uma única vez; para repetir, use outro banco de exercícios vazio.
+As capturas estão em respostas.pdf. Os arquivos SQL e execucao.txt permitem conferir os comandos e a saída real do psql. As páginas HTML apenas apresentam essa saída para as capturas; não simulam um gerenciador de banco.

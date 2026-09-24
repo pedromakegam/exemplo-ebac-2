@@ -1,0 +1,33 @@
+<!doctype html><html lang="pt-BR"><meta charset="UTF-8"><title>Clientes, produtos, vendas e itens</title><style>body{font:17px system-ui;margin:32px;color:#273747;max-width:1200px}small{color:#647587}h1{font-size:27px}pre{font:15px/1.45 ui-monospace,monospace;white-space:pre-wrap;background:#f1f4f8;border:1px solid #d6dfeb;padding:20px}footer{font-size:13px;color:#647587}</style><small>EBAC · POSTGRESQL 16 · EXECUÇÃO LOCAL</small><h1>Clientes, produtos, vendas e itens</h1><p>Saída real do psql no banco isolado ebac_evidencias. Dados fictícios.</p><pre>SET search_path TO mod28;
+SET
+SELECT * FROM &quot;Cliente&quot; ORDER BY &quot;Id&quot;;
+ Id |     Cpf     |     Nome      |         Email         
+----+-------------+---------------+-----------------------
+  1 | 00000000001 | Ana Exemplo   | ana@example.invalid
+  2 | 00000000002 | Bruno Exemplo | bruno@example.invalid
+(2 rows)
+
+SELECT * FROM &quot;Produto&quot; ORDER BY &quot;Id&quot;;
+ Id | Codigo |   Nome   | Preco 
+----+--------+----------+-------
+  1 | P001   | Caderno  | 16.90
+  2 | P002   | Caneta   |  3.50
+  3 | P003   | Borracha |  2.00
+(3 rows)
+
+SELECT &quot;Id&quot;,&quot;ClienteId&quot;,&quot;Status&quot; FROM &quot;Venda&quot; ORDER BY &quot;Id&quot;;
+ Id | ClienteId |  Status   
+----+-----------+-----------
+  1 |         1 | CONCLUIDA
+  2 |         2 | CONCLUIDA
+(2 rows)
+
+SELECT * FROM &quot;ItemVenda&quot; ORDER BY &quot;VendaId&quot;,&quot;ProdutoId&quot;;
+ VendaId | ProdutoId | Quantidade | PrecoUnitario 
+---------+-----------+------------+---------------
+       1 |         1 |          2 |         16.90
+       1 |         2 |          3 |          3.50
+       2 |         2 |          2 |          3.50
+(3 rows)
+
+</pre><footer>Comandos executados com ON_ERROR_STOP=1. Esta página apenas apresenta a saída capturada do terminal.</footer></html>
