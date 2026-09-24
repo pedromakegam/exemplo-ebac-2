@@ -11,5 +11,5 @@ mvn -pl mod5 -am test
 Para executar a demonstração depois de compilar:
 
 ```sh
-java -cp mod5/target/classes br.com.pedro.ebac.PrimeiraClasse
+java -Dfile.encoding=UTF-8 -cp mod5/target/classes br.com.pedro.ebac.PrimeiraClasse
 ```

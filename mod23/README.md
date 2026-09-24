@@ -11,5 +11,5 @@ mvn -pl mod23 -am test
 Para executar a demonstração depois de compilar:
 
 ```sh
-java -cp mod23/target/classes br.com.pedro.ebac.FiltroPessoas
+java -Dfile.encoding=UTF-8 -cp mod23/target/classes br.com.pedro.ebac.FiltroPessoas
 ```

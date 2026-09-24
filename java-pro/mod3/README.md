@@ -11,5 +11,5 @@ mvn -pl java-pro/mod3 -am test
 Para executar a demonstração depois de compilar:
 
 ```sh
-java -cp java-pro/mod3/target/classes br.com.pedro.ebac.CombinacoesETroco
+java -Dfile.encoding=UTF-8 -cp java-pro/mod3/target/classes br.com.pedro.ebac.CombinacoesETroco
 ```

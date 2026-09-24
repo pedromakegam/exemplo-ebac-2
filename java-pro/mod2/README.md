@@ -11,5 +11,5 @@ mvn -pl java-pro/mod2 -am test
 Para executar a demonstração depois de compilar:
 
 ```sh
-java -cp java-pro/mod2/target/classes br.com.pedro.ebac.Algoritmos
+java -Dfile.encoding=UTF-8 -cp java-pro/mod2/target/classes br.com.pedro.ebac.Algoritmos
 ```

@@ -11,5 +11,5 @@ mvn -pl mod17 -am test
 Para executar a demonstração depois de compilar:
 
 ```sh
-java -cp mod17/target/classes br.com.pedro.ebac.ExemploGaragem
+java -Dfile.encoding=UTF-8 -cp mod17/target/classes br.com.pedro.ebac.ExemploGaragem
 ```
