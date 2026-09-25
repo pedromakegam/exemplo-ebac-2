@@ -103,5 +103,5 @@ BEGIN
     END;
 END $$;
 DO
-psql:/Users/pedrovanderlan/.codex/visualizations/2026/09/24/01a0d57c-a072-7f90-a29c-69f24cb33492/ebac-java/entregas/mod28/vendas.sql:74: NOTICE:  OK: chave estrangeira rejeitou cliente inexistente
-psql:/Users/pedrovanderlan/.codex/visualizations/2026/09/24/01a0d57c-a072-7f90-a29c-69f24cb33492/ebac-java/entregas/mod28/vendas.sql:74: NOTICE:  OK: CHECK rejeitou quantidade zero
+psql:mod28/vendas.sql:74: NOTICE:  OK: chave estrangeira rejeitou cliente inexistente
+psql:mod28/vendas.sql:74: NOTICE:  OK: CHECK rejeitou quantidade zero
