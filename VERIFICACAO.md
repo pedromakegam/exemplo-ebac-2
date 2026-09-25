@@ -25,7 +25,7 @@ Os módulos foram compilados e testados em lotes pelo Maven. JDBC/JPA usaram Pos
 | mod24 | 10 | 0 | 0 | 0 |
 | mod25 | 32 | 0 | 0 | 0 |
 | mod29 | 5 | 0 | 0 | 0 |
-| mod30 | 8 | 0 | 0 | 0 |
+| mod30 | 39 | 0 | 0 | 0 |
 | mod32 | 2 | 0 | 0 | 0 |
 | mod33 | 1 | 0 | 0 | 0 |
 | mod35 | 3 | 0 | 0 | 0 |
@@ -36,7 +36,9 @@ Os módulos foram compilados e testados em lotes pelo Maven. JDBC/JPA usaram Pos
 | mod42/cliente-service | 3 | 0 | 0 | 0 |
 | mod42/produto-service | 3 | 0 | 0 | 0 |
 
-Total: 157 testes, sem falhas, erros ou ignorados.
+Total: 188 testes, sem falhas, erros ou ignorados.
+
+O módulo 30 foi refeito sobre o projeto da aula e validado novamente: 29 testes originais e 10 adicionais. Os demais resultados são das execuções anteriores do mesmo dia. Veja [a validação do módulo 30](mod30/VALIDACAO.md).
 
 A main do módulo 5 imprimiu Hello Pedro!. No módulo 24, dez testes falharam antes da implementação e passaram depois. SQL 27/28 foi executado com ON_ERROR_STOP; saídas e capturas estão nas pastas.
 
