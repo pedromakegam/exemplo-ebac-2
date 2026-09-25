@@ -5,7 +5,7 @@ SET
 INSERT INTO &quot;Produto&quot;(&quot;Codigo&quot;,&quot;Nome&quot;,&quot;Preco&quot;) VALUES (&#x27;EVID&#x27;,&#x27;Produto de exemplo&#x27;,10.00);
 INSERT 0 1
 SELECT &quot;Codigo&quot;,&quot;Nome&quot;,&quot;Preco&quot; FROM &quot;Produto&quot; WHERE &quot;Codigo&quot;=&#x27;EVID&#x27;;
- Codigo |        Nome        | Preco 
+ Codigo |        Nome        | Preco
 --------+--------------------+-------
  EVID   | Produto de exemplo | 10.00
 (1 row)
@@ -13,7 +13,7 @@ SELECT &quot;Codigo&quot;,&quot;Nome&quot;,&quot;Preco&quot; FROM &quot;Produto&
 UPDATE &quot;Produto&quot; SET &quot;Preco&quot;=12.50 WHERE &quot;Codigo&quot;=&#x27;EVID&#x27;;
 UPDATE 1
 SELECT &quot;Codigo&quot;,&quot;Nome&quot;,&quot;Preco&quot; FROM &quot;Produto&quot; WHERE &quot;Codigo&quot;=&#x27;EVID&#x27;;
- Codigo |        Nome        | Preco 
+ Codigo |        Nome        | Preco
 --------+--------------------+-------
  EVID   | Produto de exemplo | 12.50
 (1 row)
@@ -21,7 +21,7 @@ SELECT &quot;Codigo&quot;,&quot;Nome&quot;,&quot;Preco&quot; FROM &quot;Produto&
 DELETE FROM &quot;Produto&quot; WHERE &quot;Codigo&quot;=&#x27;EVID&#x27;;
 DELETE 1
 SELECT count(*) AS &quot;RegistrosRestantes&quot; FROM &quot;Produto&quot; WHERE &quot;Codigo&quot;=&#x27;EVID&#x27;;
- RegistrosRestantes 
+ RegistrosRestantes
 --------------------
                   0
 (1 row)

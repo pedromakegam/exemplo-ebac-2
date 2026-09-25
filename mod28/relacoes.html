@@ -4,7 +4,7 @@ SELECT v.&quot;Id&quot; AS &quot;Venda&quot;,c.&quot;Nome&quot; AS &quot;Cliente
 FROM &quot;Venda&quot; v JOIN &quot;Cliente&quot; c ON c.&quot;Id&quot;=v.&quot;ClienteId&quot;
 JOIN &quot;ItemVenda&quot; i ON i.&quot;VendaId&quot;=v.&quot;Id&quot;
 JOIN &quot;Produto&quot; p ON p.&quot;Id&quot;=i.&quot;ProdutoId&quot; ORDER BY v.&quot;Id&quot;,p.&quot;Id&quot;;
- Venda |    Cliente    | Produto | Quantidade | PrecoUnitario | Subtotal 
+ Venda |    Cliente    | Produto | Quantidade | PrecoUnitario | Subtotal
 -------+---------------+---------+------------+---------------+----------
      1 | Ana Exemplo   | Caderno |          2 |         16.90 |    33.80
      1 | Ana Exemplo   | Caneta  |          3 |          3.50 |    10.50
@@ -14,7 +14,7 @@ JOIN &quot;Produto&quot; p ON p.&quot;Id&quot;=i.&quot;ProdutoId&quot; ORDER BY 
 SELECT v.&quot;Id&quot; AS &quot;Venda&quot;,c.&quot;Nome&quot; AS &quot;Cliente&quot;,SUM(i.&quot;Quantidade&quot;*i.&quot;PrecoUnitario&quot;) AS &quot;Total&quot;
 FROM &quot;Venda&quot; v JOIN &quot;Cliente&quot; c ON c.&quot;Id&quot;=v.&quot;ClienteId&quot; JOIN &quot;ItemVenda&quot; i ON i.&quot;VendaId&quot;=v.&quot;Id&quot;
 GROUP BY v.&quot;Id&quot;,c.&quot;Nome&quot; ORDER BY v.&quot;Id&quot;;
- Venda |    Cliente    | Total 
+ Venda |    Cliente    | Total
 -------+---------------+-------
      1 | Ana Exemplo   | 44.30
      2 | Bruno Exemplo |  7.00

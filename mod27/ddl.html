@@ -9,7 +9,7 @@ CREATE TABLE
 ALTER TABLE &quot;Produto&quot; ADD COLUMN &quot;Ativo&quot; boolean NOT NULL DEFAULT true;
 ALTER TABLE
 SELECT column_name,data_type FROM information_schema.columns WHERE table_schema=&#x27;evidencia_ddl&#x27; AND table_name=&#x27;Produto&#x27; ORDER BY ordinal_position;
- column_name |     data_type     
+ column_name |     data_type
 -------------+-------------------
  Id          | bigint
  Nome        | character varying
@@ -20,7 +20,7 @@ SELECT column_name,data_type FROM information_schema.columns WHERE table_schema=
 DROP TABLE &quot;Produto&quot;;
 DROP TABLE
 SELECT to_regclass(&#x27;evidencia_ddl.&quot;Produto&quot;&#x27;) IS NULL AS &quot;TabelaExcluida&quot;;
- TabelaExcluida 
+ TabelaExcluida
 ----------------
  t
 (1 row)
